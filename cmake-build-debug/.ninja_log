@@ -1,0 +1,5 @@
+# ninja log v5
+5	308	1719834487371124805	CMakeFiles/Blokus.dir/main.cpp.o	3a1d5eca9a4970c9
+308	343	1719834487407204889	Blokus	4f97677c873eb77e
+5	264	1719832768849718668	CMakeFiles/Blokus.dir/Commands.cpp.o	f9ef46e104dfdf56
+5	187	1719834487250156048	CMakeFiles/Blokus.dir/Clock.cpp.o	3d1b36626b1c677b

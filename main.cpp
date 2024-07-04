@@ -16,6 +16,7 @@ using namespace std;
 
 
 int main() {
+    cerr << "SEED = " << chrono::steady_clock::now().time_since_epoch().count() << '\n';
     PieceSet allPieces;
     allPieces.generate();
 //    allPieces.print();
@@ -44,14 +45,20 @@ int main() {
                 /*
                  * genMove()
                  */
+
                 gen.genAllMoves(allPieces, board, comm.player);
-                gen.print();
+//                gen.print();
                 if(gen.allPossibleMoves.empty()) {
                     cout << "= pass" << "\n\n";
                     cout.flush();
                 } else {
 //                gen.print();
-                    move = gen.genMove();
+                    MonteCarloTree tree(board, comm.player);
+                    move = tree.genMove(allPieces);
+//                    tree.print();
+//                    cerr << "BAAAAAAAA" << '\n';
+//                    move.print();
+//                    cerr << "BAAAAAAAA" << '\n';
                     board.execMove(move);
                     board.printANSI();
                     //move.print();

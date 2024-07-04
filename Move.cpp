@@ -13,7 +13,7 @@
 using namespace std;
 
 Move::Move() {
-
+    x = y = -1;
 }
 
 Move::Move(Cell c, Piece p, int x, int y, int player) {
@@ -90,12 +90,12 @@ void Move::interpretMove(int PlayerToMove, string s, PieceSet& pieceSet) {
 }
 
 void Move::print() {
-    cerr << "Cell = " << c.lin << ' ' << c.col << '\n';
-//    cout << "Pos = " << x << ' ' << y << '\n';
-//    cout << "Player = " << player << '\n';
-//    cout << "Piece = " << '\n';
-//    cout << "Height = " << p.height << '\n';
-//    cout << "Width = " << p.width << '\n';
+    cerr << "Cell = " << c.x << ' ' << c.y << '\n';
+    cerr << "Pos = " << x << ' ' << y << '\n';
+    cerr << "Player = " << player << '\n';
+    cerr << "Piece = " << '\n';
+    cerr << "Height = " << p.height << '\n';
+    cerr << "Width = " << p.width << '\n';
     p.printShape();
     cerr << '\n';
 }

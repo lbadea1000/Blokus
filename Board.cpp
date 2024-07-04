@@ -177,58 +177,58 @@ void Board::print() {
 //    for(auto x : Corners[1]) {
 //        cerr << x.x << ' ' << x.y << '\n';
 //    }
-//    for(int i = 0; i < TABLE_HEIGHT; i++) {
-//        for (int j = 0; j < TABLE_WIDTH; j++)
-//            cerr << (int)mat[i][j];
-//        cerr << '\n';
-//    }
+    for(int i = 0; i < TABLE_HEIGHT; i++) {
+        for (int j = 0; j < TABLE_WIDTH; j++)
+            cerr << (int)mat[i][j];
+        cerr << '\n';
+    }
+    cerr << '\n';
+//    cerr << "Black remaining pieces : \n";
+//    for(int i = 0; i < NO_PIECES; i++)
+//        cerr << ((hand[0] & (1 << i)) == (1 << i)) << ' ';
 //    cerr << '\n';
-    cerr << "Black remaining pieces : \n";
-    for(int i = 0; i < NO_PIECES; i++)
-        cerr << ((hand[0] & (1 << i)) == (1 << i)) << ' ';
-    cerr << '\n';
-    cerr << "White remaining pieces : \n";
-    for(int i = 0; i < NO_PIECES; i++)
-        cerr << ((hand[1] & (1 << i)) == (1 << i)) << ' ';
-    cerr << '\n';
+//    cerr << "White remaining pieces : \n";
+//    for(int i = 0; i < NO_PIECES; i++)
+//        cerr << ((hand[1] & (1 << i)) == (1 << i)) << ' ';
+//    cerr << '\n';
 }
 
 void Board::printANSI() {
-    for(int i = 0; i < TABLE_HEIGHT; i++) {
-        fprintf(stderr, "%2d ", TABLE_HEIGHT - i);
-        for(int j = 0; j < TABLE_WIDTH; j++) {
-            const Cell aux(i, j);
-            if(Corners[0].find(aux) != Corners[0].end()) {
-                fprintf(stderr, "\e[105m  \e[49m\e[39m");
-            } else {
-                fprintf(stderr, "  ");
-            }
-        }
-        fprintf(stderr, "\n");
-    }
-    fprintf(stderr, "   ");
-    for (int j = 0; j < TABLE_WIDTH; j++) {
-        fprintf(stderr, "%c%c", j + 'a', j + 'a');
-    }
-    fprintf(stderr, "\n");
-
-    for(int i = 0; i < TABLE_HEIGHT; i++) {
-        fprintf(stderr, "%2d ", TABLE_HEIGHT - i);
-        for(int j = 0; j < TABLE_WIDTH; j++) {
-            const Cell aux(i, j);
-            if(Corners[1].find(aux) != Corners[1].end()) {
-                fprintf(stderr, "\e[43m  \e[49m\e[39m");
-            } else {
-                fprintf(stderr, "  ");
-            }
-        }
-        fprintf(stderr, "\n");
-    }
-    fprintf(stderr, "   ");
-    for (int j = 0; j < TABLE_WIDTH; j++) {
-        fprintf(stderr, "%c%c", j + 'a', j + 'a');
-    }
-    fprintf(stderr, "\n");
+//    for(int i = 0; i < TABLE_HEIGHT; i++) {
+//        fprintf(stderr, "%2d ", TABLE_HEIGHT - i);
+//        for(int j = 0; j < TABLE_WIDTH; j++) {
+//            const Cell aux(i, j);
+//            if(Corners[0].find(aux) != Corners[0].end()) {
+//                fprintf(stderr, "\e[105m  \e[49m\e[39m");
+//            } else {
+//                fprintf(stderr, "  ");
+//            }
+//        }
+//        fprintf(stderr, "\n");
+//    }
+//    fprintf(stderr, "   ");
+//    for (int j = 0; j < TABLE_WIDTH; j++) {
+//        fprintf(stderr, "%c%c", j + 'a', j + 'a');
+//    }
+//    fprintf(stderr, "\n");
+//
+//    for(int i = 0; i < TABLE_HEIGHT; i++) {
+//        fprintf(stderr, "%2d ", TABLE_HEIGHT - i);
+//        for(int j = 0; j < TABLE_WIDTH; j++) {
+//            const Cell aux(i, j);
+//            if(Corners[1].find(aux) != Corners[1].end()) {
+//                fprintf(stderr, "\e[43m  \e[49m\e[39m");
+//            } else {
+//                fprintf(stderr, "  ");
+//            }
+//        }
+//        fprintf(stderr, "\n");
+//    }
+//    fprintf(stderr, "   ");
+//    for (int j = 0; j < TABLE_WIDTH; j++) {
+//        fprintf(stderr, "%c%c", j + 'a', j + 'a');
+//    }
+//    fprintf(stderr, "\n");
 
     for(int i = 0; i < TABLE_HEIGHT; i++) {
         fprintf(stderr, "%2d ", TABLE_HEIGHT - i);
@@ -264,4 +264,17 @@ void Board::printFinalScores() {
         }
     }
     fprintf(stderr, "Final score: %d %d diff %d\n", black, white, black - white);
+}
+
+bool Board::eval(int player) {
+    int me = 0, opp = 0;
+    for(int i = 0; i < TABLE_HEIGHT; i++) {
+        for(int j = 0; j < TABLE_WIDTH; j++) {
+            if(mat[i][j] == player)
+                me++;
+            else if(mat[i][j] == 1 - player)
+                opp++;
+        }
+    }
+    return (me > opp);
 }

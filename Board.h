@@ -13,14 +13,7 @@ using namespace std;
 
 class Board {
 public:
-    const int FREE_CELL = 3;
-    static constexpr char ANSI_COLOR_BG[2][7] = {
-            "\e[105m", "\e[43m",
-    };
-    static constexpr char ANSI_COLOR_FG[2][7] = {
-            "\e[95m", "\e[33m",
-    };
-    static constexpr char DEFAULT_COLOR[11] = "\e[49m\e[39m";
+    static const int FREE_CELL = 3;
 
     char mat[TABLE_HEIGHT][TABLE_WIDTH];
     /// 0 = black, 1 = white
@@ -39,4 +32,5 @@ public:
     void print();
     void printANSI();
     void printFinalScores();
+    bool eval(int player);
 };

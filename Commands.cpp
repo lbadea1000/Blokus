@@ -22,11 +22,11 @@ void Command::computeCommand() {
     } else if(s == "genmove") {
         type = GEN_MOVE;
         cin >> s;
-        player = (s[0] == 'w' ? 1 : 0);
+        player = (s[0] == 'b') ? 0 : 1;
     } else if(s == "play") {
         type = PLAY;
         cin >> s;
-        player = (s[0] == 'w' ? 1 : 0);
+        player = (s[0] == 'b') ? 0 : 1;
         cin >> s;
         move = s;
     } else if(s == "quit") {

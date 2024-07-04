@@ -1,112 +1,18 @@
 //
-// Created by Lucian Badea on 01.07.2024.
+// Created by Lucian Badea on 02.07.2024.
 //
 
 #pragma once
-#include "GlobalVars.h"
 
-const char pieceSet[NO_PIECES][MAX_PIECE_SIZE + 1][MAX_PIECE_SIZE + 1] {
-        {
-                "*..",
-                "*..",
-                "***",
-        },
-        {
-                "*.",
-                "*.",
-                "*.",
-                "**",
-        },
-        {
-                "**.",
-                ".*.",
-                ".**",
-        },
-        {
-                ".*",
-                ".*",
-                "**",
-                "*.",
-        },
-        {
-                "*..",
-                "**.",
-                ".**",
-        },
-        {
-                ".*.",
-                "***",
-                ".*.",
-        },
-        {
-                ".**",
-                "**.",
-                ".*.",
-        },
-        {
-                "*",
-                "*",
-                "*",
-                "*",
-                "*",
-        },
-        {
-                "***",
-                ".*.",
-                ".*.",
-        },
-        {
-                ".*",
-                "**",
-                ".*",
-                ".*",
-        },
-        {
-                "**",
-                "**",
-                "*.",
-        },
-        {
-                "*.*",
-                "***",
-        },
-        {
-                "*.",
-                "*.",
-                "**",
-        },
-        {
-                "*",
-                "*",
-                "*",
-                "*",
-        },
-        {
-                "***",
-                ".*.",
-        },
-        {
-                "**.",
-                ".**",
-        },
-        {
-                "**",
-                "**",
-        },
-        {
-                "*.",
-                "**",
-        },
-        {
-                "*",
-                "*",
-                "*",
-        },
-        {
-                "*",
-                "*",
-        },
-        {
-                "*",
-        },
+#include <vector>
+#include "Piece.h"
+
+class PieceSet {
+public:
+    vector<Piece> PossibleForms;
+    void generate();
+    void print();
+private:
+    bool compare(Piece a, Piece b);
+    void pushPiece(Piece p, int index);
 };

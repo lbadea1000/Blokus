@@ -14,4 +14,13 @@ add_executable(Blokus
         GlobalVars.h
         Piece.cpp
         Piece.h
-        PieceSet.h)
+        AllShapes.h
+        PieceSet.cpp
+        PieceSet.h
+        Cell.cpp
+        Cell.h
+        Move.cpp
+        Move.h
+        RandomMoveGen.cpp
+        RandomMoveGen.h
+        Random.h)

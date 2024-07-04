@@ -79,6 +79,30 @@ build CMakeFiles/Blokus.dir/Piece.cpp.o: CXX_COMPILER__Blokus_unscanned_Debug /U
   OBJECT_DIR = CMakeFiles/Blokus.dir
   OBJECT_FILE_DIR = CMakeFiles/Blokus.dir
 
+build CMakeFiles/Blokus.dir/PieceSet.cpp.o: CXX_COMPILER__Blokus_unscanned_Debug /Users/lucian/Documents/GitHub/Blokus/PieceSet.cpp || cmake_object_order_depends_target_Blokus
+  DEP_FILE = CMakeFiles/Blokus.dir/PieceSet.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Blokus.dir
+  OBJECT_FILE_DIR = CMakeFiles/Blokus.dir
+
+build CMakeFiles/Blokus.dir/Cell.cpp.o: CXX_COMPILER__Blokus_unscanned_Debug /Users/lucian/Documents/GitHub/Blokus/Cell.cpp || cmake_object_order_depends_target_Blokus
+  DEP_FILE = CMakeFiles/Blokus.dir/Cell.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Blokus.dir
+  OBJECT_FILE_DIR = CMakeFiles/Blokus.dir
+
+build CMakeFiles/Blokus.dir/Move.cpp.o: CXX_COMPILER__Blokus_unscanned_Debug /Users/lucian/Documents/GitHub/Blokus/Move.cpp || cmake_object_order_depends_target_Blokus
+  DEP_FILE = CMakeFiles/Blokus.dir/Move.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Blokus.dir
+  OBJECT_FILE_DIR = CMakeFiles/Blokus.dir
+
+build CMakeFiles/Blokus.dir/RandomMoveGen.cpp.o: CXX_COMPILER__Blokus_unscanned_Debug /Users/lucian/Documents/GitHub/Blokus/RandomMoveGen.cpp || cmake_object_order_depends_target_Blokus
+  DEP_FILE = CMakeFiles/Blokus.dir/RandomMoveGen.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Blokus.dir
+  OBJECT_FILE_DIR = CMakeFiles/Blokus.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Blokus
@@ -87,7 +111,7 @@ build CMakeFiles/Blokus.dir/Piece.cpp.o: CXX_COMPILER__Blokus_unscanned_Debug /U
 #############################################
 # Link the executable Blokus
 
-build Blokus: CXX_EXECUTABLE_LINKER__Blokus_Debug CMakeFiles/Blokus.dir/main.cpp.o CMakeFiles/Blokus.dir/Commands.cpp.o CMakeFiles/Blokus.dir/Clock.cpp.o CMakeFiles/Blokus.dir/Board.cpp.o CMakeFiles/Blokus.dir/Piece.cpp.o
+build Blokus: CXX_EXECUTABLE_LINKER__Blokus_Debug CMakeFiles/Blokus.dir/main.cpp.o CMakeFiles/Blokus.dir/Commands.cpp.o CMakeFiles/Blokus.dir/Clock.cpp.o CMakeFiles/Blokus.dir/Board.cpp.o CMakeFiles/Blokus.dir/Piece.cpp.o CMakeFiles/Blokus.dir/PieceSet.cpp.o CMakeFiles/Blokus.dir/Cell.cpp.o CMakeFiles/Blokus.dir/Move.cpp.o CMakeFiles/Blokus.dir/RandomMoveGen.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   OBJECT_DIR = CMakeFiles/Blokus.dir
   POST_BUILD = :

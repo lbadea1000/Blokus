@@ -17,6 +17,7 @@ public:
     static const int CPU_TIME = 6;
     static const int UNKNOWN = 7;
     int type = DEFAULT;
+    string firstCommand = "0";
     int player;
     string move;
 
